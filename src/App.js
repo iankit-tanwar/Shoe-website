@@ -1,25 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Collection from './pages/Collection'
+import Contact from './pages/Contact'
+import Home from './pages/Home'
+import Layout from './pages/Layout'
+import Lookbook from './pages/Lookbook'
+import Men from './pages/Men'
+import NotFound from './pages/NotFound'
+import Sale from './pages/Sale'
+import Story from './pages/Story'
+import Women from './pages/Women'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+    <BrowserRouter>
+    <Routes>
+    <Route path='' element={<Layout/>}>
 
-export default App;
+    <Route index element={<Home/>}></Route>
+    <Route path='men' element={<Men/>}></Route>
+    <Route path='women' element={<Women/>}></Route>
+    <Route path='collection' element={<Collection/>}></Route>
+    <Route path='lookbook' element={<Lookbook/>}></Route>
+    <Route path='sale' element={<Sale/>}></Route>
+    <Route path='story' element={<Story/>}></Route>
+    <Route path='Contact' element={<Contact/>}></Route>
+
+
+
+    </Route>
+    <Route path='*' element={<NotFound/>}></Route>
+    
+
+
+    </Routes>
+    
+    
+    
+    
+    </BrowserRouter>
+    
+    
+    
+    
+    </>
+
+  )
+}

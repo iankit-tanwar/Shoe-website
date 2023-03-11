@@ -1,0 +1,32 @@
+header{
+    border: 1px dashed red;
+    height: 90px;
+}
+main{
+    border: 1px dashed red;
+    height: 800px;
+}
+footer{
+    border: 1px dashed red;
+    height: 660px;
+}
+.a_tbdr{
+   
+    border: 1px dashed red;
+}
+.navi{
+    text-decoration: none;
+    color: #000000;
+
+   
+  
+  
+
+}
+
+.homelogo{
+    text-decoration: none;
+    color: #000000;
+   
+    
+}
