@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import {   Card, Col, Container, Row, Stack } from 'react-bootstrap'
 import { URL } from '../helper/URL';
-import { Link, useNavigate } from 'react-router-dom';
+import {  useNavigate } from 'react-router-dom';
 
 
 export default function Men() {
-  const [mensshoe ,setmensShoe]=useState();
+  const [mensshoe ,setMensShoe]=useState('');
   const navigate = useNavigate();
 
+ 
 
   useEffect(()=>{
+ 
 
     fetch('http://localhost:1337/api/mens-shoes?populate=*',{
       method: "GET",  
@@ -22,17 +24,16 @@ export default function Men() {
     .then((res)=>{return res.json()})
     .then((data)=> {
       console.log(data.data)
-      setmensShoe(data.data)
+      setMensShoe(data.data)
     })
     .catch((err)=>{console.log(err)});
 
 
 
   },[]);
+ 
   
-  function handleClick() {
-    navigate("/MensDetails");
-  }
+ 
   return (
     <main>
       <Container className='a_tbdr h-100'>
@@ -45,7 +46,7 @@ export default function Men() {
 
           {
             mensshoe&& mensshoe.map((cv,idx,arr)=>{
-              return <Card key={idx} style={{ width: '18rem' }} className='text-center' onClick={()=>{handleClick()}}>
+              return <Card key={idx} style={{ width: '18rem' }} className='text-center' onClick={()=>{navigate("/MensDetails?productName="+cv.attributes.name)}}>
               <Card.Img variant="top" src={`${URL}`+cv.attributes.img.data.attributes.url} />
               <Card.Body>
                
