@@ -36,10 +36,14 @@ export default function Header() {
   </div>
   <div className='col-2  mt-4 ms-5'>
    
-       <Link to="story" className='navi   ms-3'>OUR STORY</Link>
+       <Link to="story" className='navi   '>OUR STORY</Link>
     
        <Link to="contact" className='navi  ms-3'>CONTACT</Link>
-    
+
+       <Link to="contact" className='navi ms-3 '>LOGIN/</Link>
+       
+       <Link to="contact" className='navi  '>SIGNIN</Link>
+
 
   </div>
   </div>
