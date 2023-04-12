@@ -11,6 +11,7 @@ import Sale from './pages/Sale'
 import Story from './pages/Story'
 import Women from './pages/Women'
 import MensDetails from './pages/MensDetails'
+import Login from './pages/Login'
 
 export default function App() {
   return (
@@ -31,7 +32,9 @@ export default function App() {
 
 
 
+
     </Route>
+    <Route path='login' element={<Login/>}></Route>
     <Route path='*' element={<NotFound/>}></Route>
     
 

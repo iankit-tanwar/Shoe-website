@@ -46,7 +46,7 @@ export default function Men() {
 
           {
             mensshoe&& mensshoe.map((cv,idx,arr)=>{
-              return <Card key={idx} style={{ width: '18rem' }} className='text-center' onClick={()=>{navigate("/MensDetails?productName="+cv.attributes.name)}}>
+              return <Card key={idx} style={{ width: '18rem' }} className='text-center ms-1' onClick={()=>{navigate("/MensDetails?productName="+cv.attributes.name)}}>
               <Card.Img variant="top" src={`${URL}`+cv.attributes.img.data.attributes.url} />
               <Card.Body>
                
